@@ -35,7 +35,7 @@ func (cli *CLI) Run(args []string) int {
 	flags.SetOutput(cli.errStream)
 
 	flags.BoolVar(&graduate, "graduate", false, "Set graduate school mode flag.")
-	flags.StringVar(&f, "f", "text", "Setting output format.")
+	flags.StringVar(&f, "f", "text", "Setting output format 'json' or 'text'.")
 	flags.BoolVar(&version, "version", false, "Print version information and quit.")
 
 	// Parse commandline flag
