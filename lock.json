@@ -1,0 +1,53 @@
+{
+    "memo": "3e61cd489f24d54d857cf224e94e01a1c0050736bcfe7be83eeef642aac25788",
+    "projects": [
+        {
+            "name": "github.com/PuerkitoBio/goquery",
+            "version": "v1.0.2",
+            "revision": "3cb3b8656883c2cc3deb9c643d93ea6e5157e425",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/andybalholm/cascadia",
+            "branch": "master",
+            "revision": "349dd0209470eabd9514242c688c403c0926d266",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/mattn/go-runewidth",
+            "version": "v0.0.2",
+            "revision": "9e777a8366cce605130a531d2cd6363d07ad7317",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/olekukonko/tablewriter",
+            "branch": "master",
+            "revision": "febf2d34b54a69ce7530036c7503b1c9fbfdf0bb",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "golang.org/x/net",
+            "branch": "master",
+            "revision": "f2499483f923065a842d38eb4c7f1927e6fc6e6d",
+            "packages": [
+                "html"
+            ]
+        },
+        {
+            "name": "golang.org/x/text",
+            "branch": "master",
+            "revision": "ece019dcfd29abcf65d0d1dfe145e8faad097640",
+            "packages": [
+                "encoding/japanese"
+            ]
+        }
+    ]
+}
