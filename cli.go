@@ -34,8 +34,8 @@ func (cli *CLI) Run(args []string) int {
 	flags := flag.NewFlagSet(Name, flag.ContinueOnError)
 	flags.SetOutput(cli.errStream)
 
-	flags.BoolVar(&graduate, "graduate", false, "For graduate school mode")
-	flags.StringVar(&f, "f", "json", "Setting output format.")
+	flags.BoolVar(&graduate, "graduate", false, "Set graduate school mode flag.")
+	flags.StringVar(&f, "f", "text", "Setting output format.")
 	flags.BoolVar(&version, "version", false, "Print version information and quit.")
 
 	// Parse commandline flag
@@ -67,7 +67,7 @@ func (cli *CLI) Run(args []string) int {
 			return ExitCodeError
 		}
 
-		fmt.Println(string(b))
+		fmt.Fprintf(cli.outStream, "%s\n", b)
 	} else if f == "text" {
 		table := tablewriter.NewWriter(cli.outStream)
 		table.SetHeader([]string{"クラス", "日時", "時限", "科目", "担当教員", "備考"})
