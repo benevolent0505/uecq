@@ -57,8 +57,8 @@ func (cli *CLI) Run(args []string) int {
 		url = UndergraduateURL
 	}
 
-	var l LessonsSlice
-	l.Lessons = GetLessons(url)
+	var l LecturesSlice
+	l.Lectures = GetLectures(url)
 
 	if f == "json" {
 		b, err := json.Marshal(l)
@@ -72,8 +72,8 @@ func (cli *CLI) Run(args []string) int {
 		table := tablewriter.NewWriter(cli.outStream)
 		table.SetHeader([]string{"クラス", "日時", "時限", "科目", "担当教員", "備考"})
 
-		for _, lesson := range l.Lessons {
-			table.Append(lesson.ToArray())
+		for _, lecture := range l.Lectures {
+			table.Append(lecture.ToArray())
 		}
 
 		table.Render()

@@ -8,8 +8,8 @@ import (
 	"time"
 )
 
-// Lesson stands for lesson of UEC.
-type Lesson struct {
+// Lecture stands for lecture of UEC.
+type Lecture struct {
 	Class   string    `json:"class"`
 	Date    time.Time `json:"date"`
 	Period  int       `json:"period"`
@@ -18,9 +18,9 @@ type Lesson struct {
 	Remark  string    `json:"remark"`
 }
 
-// LessonsSlice is struct for json.
-type LessonsSlice struct {
-	Lessons []Lesson `json:"lessons"`
+// LecturesSlice is struct for json.
+type LecturesSlice struct {
+	Lectures []Lecture `json:"lectures"`
 }
 
 // URLs are.
@@ -29,9 +29,9 @@ const (
 	GraduateURL      = "http://kyoumu.office.uec.ac.jp/kyuukou/kyuukou2.html"
 )
 
-// ToArray converts Lesson struct to an array.
-func (l Lesson) ToArray() []string {
-	lesson := []string{
+// ToArray converts Lecture struct to an array.
+func (l Lecture) ToArray() []string {
+	lecture := []string{
 		l.Class,
 		l.Date.String(),
 		strconv.Itoa(l.Period),
@@ -40,13 +40,13 @@ func (l Lesson) ToArray() []string {
 		l.Remark,
 	}
 
-	return lesson
+	return lecture
 }
 
-// GetLessons get kyuuko lessons from url.
-func GetLessons(url string) []Lesson {
+// GetLectures get kyuuko lectures from url.
+func GetLectures(url string) []Lecture {
 	doc, _ := goquery.NewDocument(url)
-	lessons := []Lesson{}
+	lectures := []Lecture{}
 	doc.Find("table > tbody > tr").Next().Each(func(_ int, row *goquery.Selection) {
 		elems := make([]string, 6)
 		row.Find("td").Each(func(i int, s *goquery.Selection) {
@@ -65,7 +65,7 @@ func GetLessons(url string) []Lesson {
 		loc, _ := time.LoadLocation("Asia/Tokyo")
 		date := time.Date(time.Now().Year(), time.Month(month), day, 0, 0, 0, 0, loc)
 
-		lessons = append(lessons, Lesson{
+		lectures = append(lectures, Lecture{
 			Class:   elems[0],
 			Date:    date,
 			Period:  period,
@@ -75,5 +75,5 @@ func GetLessons(url string) []Lesson {
 		})
 	})
 
-	return lessons
+	return lectures
 }
