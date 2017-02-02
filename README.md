@@ -1,10 +1,19 @@
 # uecq
 
-
-
 ## Description
 
 ## Usage
+
+``` shell
+$ uecq -help
+Usage of uecq:
+  -f string
+    	Setting output format. (default "text")
+  -graduate
+    	Set graduate school mode flag.
+  -version
+    	Print version information and quit.
+```
 
 ## Install
 
