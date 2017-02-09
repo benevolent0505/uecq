@@ -1,6 +1,12 @@
 # uecq
 
+Command line tool to get UEC Kyuuko information. [電気通信大学(学域・学部) 休講のお知らせ](http://kyoumu.office.uec.ac.jp/kyuukou/kyuukou.html)
+
 ## Description
+'uecq' is a command line tool to get the cancelled lectures list in UEC. You can get json format data of the lectures list.
+
+## Demo
+![](demo/uecq.gif)
 
 ## Usage
 
@@ -22,6 +28,8 @@ To install, use `go get`:
 ```bash
 $ go get -d github.com/benevolent0505/uecq
 ```
+
+So, uecq requres `go`.
 
 ## Contribution
 
